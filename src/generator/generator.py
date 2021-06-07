@@ -705,19 +705,20 @@ def parse_ast(ast):
         return v_ind, instructions
 
     elif ast[0] == 'ret':
-        v_exp = ast[1]
         instructions = []
-        if type(v_exp) == tuple:
-            v_exp, instructions = parse_ast(v_exp)
-        if type(v_exp) == str:
-            instructions.append('add $v0, $zero, $' + v_exp)
-            dealloc_reg(v_exp)
-        elif type(v_exp) == int:
-            instructions.append('li $v0, ' + str(v_exp))
-        instructions.append('lw $ra, 0($sp)')
-        instructions.append('addi $sp, $sp, STACK')
-        if global_fun_name != 'main':
-            instructions.append('jr $ra')
+        if len(ast) > 1:
+            v_exp = ast[1]
+            if type(v_exp) == tuple:
+                v_exp, instructions = parse_ast(v_exp)
+            if type(v_exp) == str:
+                instructions.append('add $v0, $zero, $' + v_exp)
+                dealloc_reg(v_exp)
+            elif type(v_exp) == int:
+                instructions.append('li $v0, ' + str(v_exp))
+            instructions.append('lw $ra, 0($sp)')
+            instructions.append('addi $sp, $sp, STACK')
+            if global_fun_name != 'main':
+                instructions.append('jr $ra')
         return 'v0', instructions
 
 

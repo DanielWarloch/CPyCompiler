@@ -225,6 +225,7 @@ Drzewo składni jest zaimplementowane w krotkach. Główną ideą jest to, że j
 to funkcja parsowania jest uruchamiana ponownie, aż do napotkania węzła końcowego, dla którego generowane są instrukcje.
 
 W przypadku wystąpienia błędów (zarówno parsera jak i skanera) zostaje wypisany odpowiedni komunikat po czym program przerywa pracę.
+
 ## 8. Informacje o stosowanych generatorach skanerów/parserów, pakietach zewnętrznych:
 W naszym projekcie zastosowaliśmy generator prarserów PLY. PLY to w 100% implementacja w Pythonie narzędzi lex i yacc powszechnie używanych do pisania parserów i kompilatorów. Parsowanie opiera się na tym samym algorytmie LALR(1) używanym przez wiele narzędzi yacc. 
 Oto kilka godnych uwagi funkcji:
@@ -233,6 +234,7 @@ Oto kilka godnych uwagi funkcji:
 * PLY może być używany do budowania parserów dla „prawdziwych” języków programowania. Chociaż nie jest ultraszybki ze względu na implementację w Pythonie, PLY może być używany do analizowania gramatyk składających się z kilkuset reguł.
 
 Korzystamy także z biblioteki argparse na potrzeby parsowania parametrów podawanych przy uruchamianiu programu. Takich jak ścieżka do pliku źródłowego, ścieżka do pliku wynikowego oraz kilku innych opcji. 
+
 ## 9. Informacje o zastosowaniu specyficznych metod rozwiązania problemu:
 Język MIPS asembler jest to po prostu język asemblera procesora z rodziny MIPS. 
 Termin MIPS jest akronimem od Microprocessor without Interlocked Pipeline Stages. Jest to architektura o zredukowanym zestawie instrukcji opracowana przez organizację o nazwie MIPS Technologies.

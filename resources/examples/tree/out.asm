@@ -18,7 +18,7 @@ lw $ra, 0($sp)
 addi $sp, $sp, 8
 lw $ra, 0($sp)
 addi $sp, $sp, 8
-li $v0 10 #program finished call terminate
+li $v0 10
 syscall
 
 tree:

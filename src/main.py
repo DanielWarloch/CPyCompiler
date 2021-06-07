@@ -37,3 +37,5 @@ if __name__ == "__main__":
         parse(ast, args.dest_file)
     except ParseException as e:
         print(e)
+    except:
+        print("Illegal token")
